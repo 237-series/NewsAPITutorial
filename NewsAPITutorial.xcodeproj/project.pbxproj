@@ -11,6 +11,7 @@
 		233B8BC729C0040800379F4E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233B8BC629C0040800379F4E /* ContentView.swift */; };
 		233B8BC929C0040900379F4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 233B8BC829C0040900379F4E /* Assets.xcassets */; };
 		233B8BCC29C0040900379F4E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 233B8BCB29C0040900379F4E /* Preview Assets.xcassets */; };
+		233B8BD329C0043400379F4E /* RequestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233B8BD229C0043400379F4E /* RequestAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		233B8BC629C0040800379F4E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		233B8BC829C0040900379F4E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		233B8BCB29C0040900379F4E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		233B8BD229C0043400379F4E /* RequestAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				233B8BC429C0040800379F4E /* NewsAPITutorialApp.swift */,
 				233B8BC629C0040800379F4E /* ContentView.swift */,
+				233B8BD229C0043400379F4E /* RequestAPI.swift */,
 				233B8BC829C0040900379F4E /* Assets.xcassets */,
 				233B8BCA29C0040900379F4E /* Preview Content */,
 			);
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				233B8BC729C0040800379F4E /* ContentView.swift in Sources */,
+				233B8BD329C0043400379F4E /* RequestAPI.swift in Sources */,
 				233B8BC529C0040800379F4E /* NewsAPITutorialApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

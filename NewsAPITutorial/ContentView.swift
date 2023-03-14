@@ -7,15 +7,65 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct URLImage: View {
+    let urlString: String?
+    @State var data: Data?
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            
+            if let data = data, let image = UIImage(data: data) {
+                Image(uiImage: image)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 130, height: 70)
+                    .background(.white)
+            } else {
+//                Image("")
+//                    .frame(width: 130, height: 70)
+//                    .background(.gray)
+                    
+            }
+        }.onAppear(perform: {
+            fetchImageData()
+        })
+    }
+    
+    private func fetchImageData() {
+        guard let urlString = urlString else {
+            return
         }
-        .padding()
+        
+        guard let url = URL(string: urlString) else {
+            return
+        }
+        let task = URLSession.shared.dataTask(with: url) { data, reponse, err in
+            self.data = data
+        }
+        task.resume()
+    }
+}
+
+struct ContentView: View {
+    @StateObject private var network = RequestAPI.shared
+    
+    var body: some View {
+        NavigationView {
+            List {
+                ForEach(network.posts, id: \.self) { result in
+                    //Text(result.title)
+                    HStack {
+                        URLImage(urlString: result.urlToImage)
+                        Text(result.title)
+                            .bold()
+                    }
+                }
+            }
+            .navigationTitle("뉴스 둘러보기")
+        }.onAppear(perform: {
+            network.fetchData()
+        })
+        
     }
 }
 
